@@ -1,0 +1,38 @@
+
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/top_artists.css') }}" />
+{% endblock %}
+
+{% block content%}
+
+{% for item in artists_items %}
+
+<div class="cards">
+
+    <div class="image">
+        <img src="{{ item['artist_img_url'] }}" class="img-fluid rounded-start" alt="The imagine of the artist">
+    </div>
+
+    <div class="title">
+        <h3> <b><em>{{ item['artist_name'] }}</em></b> </h3>
+    </div>
+
+    <div class="description">
+        <p> <b><em> Genres: </em></b> {{ item['genres']| trim('{}') }}</p>
+    </div>
+
+    <div class="about">
+        <p> <b><em>About artist: </em></b> {{ item['about_artists'] }}</p>
+    </div>
+
+    <form action="{{ item['artist_url'] }}" target="_blank">
+        <button>Listen on Spotify</button>
+    </form>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}

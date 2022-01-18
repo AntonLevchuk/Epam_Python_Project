@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+	background: linear-gradient(90deg, #aea4e3, #d3ffe8);
+}
+
+form {
+    width: 550px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    text-align: center;
+}
+
+label {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+form input[id="email"], form input[id="password"], form input[id="username"], form input[id="pass_confirm"] {
+    position: static;
+    background: none;
+    margin: 10px;
+    text-align: center;
+    border: 2px solid #aea4e3;
+    padding: 14px 10px;
+    width: 400px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+form input[ id="email" ]:hover,form input[ id="password" ]:hover, form input[id="username"]:hover, form input[id="pass_confirm"]:hover{
+      border-color: #d3ffe8;
+}
+
+form input[id="submit"]{
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #aea4e3;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover{
+    background: #d3ffe8;
+    color: black;
+}

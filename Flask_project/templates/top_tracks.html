@@ -1,0 +1,28 @@
+
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/top_tracks.css') }}" />
+{% endblock %}
+
+{% block content%}
+
+{% for item in tracks_items %}
+
+<div class="card" style="width: 18rem;">
+  <img src="{{ item['track_img_url'] }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h4 class="card-title"> <b><em> {{ item['track_name'] }} </em></b> </h4>
+    <h4 class="text"> <b><em> Album: </em></b> {{ item['album_name'] }}  </h4>
+    <h4 class="text"> <b><em> Artist: </em></b> {{ item['artist_name'] }}</h4>
+    <p class="card-text"><small class="text-muted"> <b><em> Release date: </em></b> {{ item['release_date'] }}</small></p>
+
+    <form id="2" action="{{ item['track_url'] }}" target="_blank">
+      <button>Listen on Spotify</button>
+    </form>
+  </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}
